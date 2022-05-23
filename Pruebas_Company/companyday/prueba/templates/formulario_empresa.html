@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>FLASK CRUD</title>
+    <!-- BOOSTRAP 4 -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style_form.css">
+  </head>
+  <body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Inscribe a tu empresa</a>
+    </nav>
+
+  <!-- <h1>Inscripción Empresas</h1> -->
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/update/{{contact.0}}" method="POST">
+          <h2>Registro de empresas</h2>
+
+            <label>Nombre de la empresa </label>
+            <input type="text" name="name" value="{{contact.1}}" class="form-control"><br>
+            <label>Nombre de la persona de contacto </label>
+            <input type="text" name="person" value="{{contact.2}}" class="form-control"><br>
+            <label>Email de contacto  </label>
+            <input type="text" name="email" value="{{contact.3}}" class="form-control"><br>
+            <label>Telefono de contacto  </label>
+            <input type="text" name="tlf" value="{{contact.4}}" class="form-control"><br>
+            <label>Dirección de la empresa  </label>
+            <input type="text" name="direccion" value="{{contact.5}}" class="form-control">
+            <label>Población</label>
+            <input type="text" name="poblacion" value="{{contact.6}}" class="form-control"><br>
+            <label>Provincia</label>
+            <input type="text" name="provincia" value="{{contact.7}}" class="form-control">
+            <label>Código Postal  </label>
+            <input type="text" name="codigo_postal" value="{{contact.8}}" class="form-control"><br>
+            <label>URL de la empresa</label>
+            <input type="text" name="url" value="{{contact.9}}" class="form-control">
+            <label>Logo de la empresa  </label>
+            <input type="text" name="logo" value="{{contact.10}}" class="form-control">
+
+          <hr>
+
+          <p> <h4>Consiento el uso del nombre de la empresa y el logo para material promocional de este evento: </h4>
+          <label name="si">Si</label><input type="radio" value="si">
+          <label name="no">No</label><input type="radio" value="no">
+          </p>
+          <hr>
+
+          <p> <h4>La empresa actualmente está buscando gente:</h4>
+          <label name="si_buscagente">Si</label>
+          <input type="radio" value="si">
+          <label name="no_buscagente">No</label>
+          <input type="radio" value="no"><br>
+          </p>
+          <hr>
+
+          <p><h4> Seleccione las actividades en las que quiera participar: </h4><br>
+          <input type="checkbox" name="company_fair"> Company Fair<br>
+          <input type="checkbox" name="student_pitches"> Student Pitches<br>
+          <input type="checkbox" name="speed_meetings"> Speed Meeting<br>
+          <input type="checkbox" name="company_talks"> Comapy Talks<br>
+          </p>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ <div class="container pt-4">
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <!-- footer -->
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>
+<!--
+    <h1>Inscripción Empresas</h1>
+    <div class="formulario">
+        <form target="_blank">
+            <h1>Inscribe a tu empresa en el Company Day</h1>
+            <fieldset id="datos_empresa">
+                <legend><h2>Registro de empresas</h2></legend>
+                <label for="nombre_empresa">Nombre de la empresa </label>
+                <input type="text" class="form-control" name="nombre_empresa" placeholder="U-TAD"><br>
+
+                <label for="persona_contacto"> Nombre de la persona de contacto </label>
+                <input type="text" class="form-control" name="persona_contacto" placeholder="Marta"><br>
+
+                <label for="mail_contacto"> Email de contacto </label>
+                <input type="email" class="form-control" name=mail_contacto" placeholder="marta@gmail.com">
+
+                <label for="tlf_contacto"> Teléfono de contacto </label>
+                <input type="tel" class="form-control" name="tlf_contacto" placeholder="987456321"><br>
+
+                <label for="direccion_empresa"> Dirección de la empresa </label>
+                <input type="text" class="form-control"> <br>
+
+                <label for="poblacion_empresa"> Población</label>
+                <input type="text" class="form-control">
+
+                <label for="provincia_empresa">Provincia</label>
+                <input type="text" class="form-control">
+
+                <label for="codigopostal_empresa"> Código Postal </label>
+                <input type="number" class="form-control">
+
+                <label for="pais_empresa"> Pais </label>
+                <input type="text" class="form-control"> <br>
+
+                <label for="url_empresa"> URL de la empresa </label>
+                <input type="url" class="form-control">
+
+                <label for="logo_empresa">Logo de la empresa </label>
+                <input type="image" class="form-control">
+            </fieldset>
+            <br><br>
+
+                <p> <h4>Consiento el uso del nombre de la empresa y el logo para material promocional de este evento: </h4>
+                <label for="si">Si</label><input type="radio" value="si">
+                <label for="no">No</label><input type="radio" value="no">
+                </p>
+                <br>
+                <p> <h4>La empresa actualmente está buscando gente:</h4>
+                <label for="si_buscagente">Si</label>
+                <input type="radio" value="si">
+                <label for="no_buscagente">No</label>
+                <input type="radio" value="no"><br>
+                </p>
+
+            <fieldset id="actividades">
+                <legend><h2>Actividades del Company Day</h2></legend>
+                <p> Seleccione las actividades en las que quiera participar: <br>
+                <input type="checkbox" name="company_fair"> Company Fair<br>
+                <input type="checkbox" name="student_pitches"> Student Pitches<br>
+                <input type="checkbox" name="speed_meetings"> Speed Meeting<br>
+                <input type="checkbox" name="company_talks"> Comapy Talks<br>
+               </p>
+            </fieldset>
+            <br>
+            <input type="submit" value="Enviar inscripción" name="submit" >
+        </form>
+    </div>
+    <script type="javascript" src="../formulario_empresa.js"></script>
+</body>
+</html>

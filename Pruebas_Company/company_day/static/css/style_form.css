@@ -1,0 +1,22 @@
+body{
+	background-color: lightslategrey;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.formulario{
+	padding: 5%;
+	border-style: inset;
+	border-radius: 20px;
+}
+
+input[type=radio]{
+	background-color: red;
+}
+
+fieldset input{
+	margin: 1%;
+}
+
+div{
+	background-color: white;
+}

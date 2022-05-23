@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/css/style_form.css">
+    <link rel="stylesheet" href="../static/css/style_barraprogress.css">
+    
+    <title>Inscripción Empresas</title>
+    <script>
+        var contador = 0;
+
+        function siguiente(){
+            contador++;
+            if (contador == 0){
+                document.getElementById("datos_empresa").hidden = false;
+                document.getElementById("actividades_company").hidden = true;
+                document.getElementById("consentimiento").hidden = true;
+            }
+            else if (contador == 1){
+                document.getElementById("datos_empresa").hidden = true;
+                document.getElementById("actividades_company").hidden = false;
+                document.getElementById("consentimiento").hidden = true;
+                document.getElementById("step2").className = "active step0";
+            }else if (contador == 2){
+                document.getElementById("datos_empresa").hidden = true;
+                document.getElementById("actividades_company").hidden = true;
+                document.getElementById("consentimiento").hidden = false;
+                document.getElementById("botonEnviar").hidden = false;
+                document.getElementById("botonSiguiente").hidden = true;
+                document.getElementById("step3").className = "active step0";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <header class="d-flex justify-content-around">
+        <img src="../static/img/logo-utad.png" class="d-lg-inline-flex" width="100" height="50">
+        <img src="../static/img/logo-company.png" class="d-lg-inline-flex" width="200" height="80">
+        <img src="../static/img/espanol.png" class="d-lg-inline-flex" width="50" height="50">
+    </header>
+    <br>
+    <!-- TITULO -->
+    <h3 class="text-center">Inscribe a tu empresa en el Company Day</h3>
+    <br>   
+    <div class="container justify-content-center" >
+        <!-- BARRA DE PROCESO -->
+        <!-- https://bbbootstrap.com/snippets/multi-step-form-wizard-animated-progressbar-53000683 -->
+        <!-- <img src="../static/img/proceso-inscripcion1.png" height="100"> -->
+
+        <div class="container px-1 px-md-4 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <ul id="progressbar" class="text-center">
+                        <li id="step1" class="active step0"></li>
+                        <li id="step2" class="step0"></li>
+                        <li id="step3" class="step0"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-between top" id="text_barraprogreso">
+                <div class="row d-flex icon-content">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Registro de empresas</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> 
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Actividades del<br>Company Day</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> 
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Últimas cuestiones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="formulario">
+            <form action="{{ request.path }}" method="post" novalidate>
+                {{ form.csrf_token }}
+                <div id="datos_empresa">
+                    {{ form.name.label }}
+                    {{ form.name(size=64) }}<br>
+                    {% for error in form.name.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.email.label }}
+                    {{ form.email }}<br>
+                    {% for error in form.email.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.password.label }}
+                    {{ form.password }}<br>
+                    {% for error in form.password.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.persona_contacto.label }}
+                    {{ form.persona_contacto }}<br>
+                    {% for error in form.persona_contacto.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+
+
+
+
+                    {{ form.phone.label }}
+                    {{ form.phone }}<br>
+                    {% for error in form.phone.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.direccionLinea1.label }}
+                    {{ form.direccionLinea1 }}<br>
+                    {% for error in form.direccionLinea1.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.direccionLinea2.label }}
+                    {{ form.direccionLinea2 }}<br>
+                    {% for error in form.direccionLinea2.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.poblacion.label }}
+                    {{ form.poblacion }}<br>
+                    {% for error in form.poblacion.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+
+
+                    {{ form.provincia.label }}
+                    {{ form.provincia }}<br>
+                    {% for error in form.provincia.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.codigo_postal.label }}
+                    {{ form.codigo_postal }}<br>
+                    {% for error in form.codigo_postal.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.pais.label }}
+                    {{ form.pais }}<br>
+                    {% for error in form.pais.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.url.label }}
+                    {{ form.url }}<br>
+                    {% for error in form.url.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+
+
+                    {{ form.recovery.label }}
+                    {{ form.recovery }}<br>
+                    {% for error in form.recovery.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
+                    {{ form.cif.label }}
+                    {{ form.cif }}<br>
+                    {% for error in form.cif.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div id="actividades_company" hidden>
+                    <p> Seleccione las actividades en las que quiera participar: (* al menos elegir una) <br>
+                        <input type="checkbox" name="company_fair"> Company Fair<br>
+                        <input type="checkbox" name="student_pitches"> Student Pitches<br>
+                        <input type="checkbox" name="speed_meetings"> Speed Meeting<br>
+                        <input type="checkbox" name="company_talks"> Comapy Talks<br>
+                    </p>
+                </div>
+
+                <div id="consentimiento" hidden>
+                    <p> Consiento el uso del nombre de la empresa y el logo para material promocional de este evento: <br>
+                        <label for="si">Si</label><input type="radio" value="si">
+                        <label for="no">No</label><input type="radio" value="no">
+                        </p>
+                        <br>
+                        <p> La empresa actualmente está buscando gente:<br>
+                        <label for="si_buscagente">Si</label>
+                        <input type="radio" value="si">
+                        <label for="no_buscagente">No</label>
+                        <input type="radio" value="no"><br>
+                    </p>
+                </div>
+                
+                <br><br>
+                <div id="botonEnviar" hidden>
+                    {{ form.submit() }}
+                </div>
+                <button id="botonSiguiente" type="button" class="btn btn-primary" onclick="siguiente()">Siguiente</button>
+
+                <br><br><br><br>
+            </form>
+        </div>
+    </div>
+    <!--<script type="javascript" src="../formulario_empresa.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+	/*background-color: #FF9882;*/
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+div{
+	background-color: white;
+}
+
+#navegador{
+	margin: 0%;
+	padding: 0;
+}

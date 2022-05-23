@@ -1,0 +1,39 @@
+header{
+    background: #EFEFEF;
+  }
+  
+header img{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.container img{
+    margin-right: auto;
+}
+
+#actividades_company{
+  text-size-adjust: 10%;
+  margin-bottom: 5%;
+}
+
+#actividades_company input{
+  color: #0C6CEF;
+}
+
+
+/* input{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  
+  position: absolute;
+  width: 190px;
+  height: 40px;
+  left: 642px;
+  top: 649px;
+
+  background: #FFFFFF;
+  border: 1px solid #0075FF;
+  box-sizing: border-box;
+} */

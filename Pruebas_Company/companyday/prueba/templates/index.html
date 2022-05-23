@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/style_inicio.css">
+    <title>Company Day</title>
+    <style type="text/css">
+        #navegador button {
+            background-color: #1b39f8;
+            text-decoration-color: white;
+            margin-left: 31.88%;
+            }
+        #navegador button .navbar-toggler-icon {
+            display: flex !important;
+            justify-content: left !important;
+            align-items: flex-end !important;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            }
+        .row video{
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        .container img{
+            padding-right: 10% !important;
+            margin-right: 10% !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="navegador" class="container-fluid d-flex bg-primary text-white">
+        <!-- Logo U-tad -->
+        <img src="../static/logo_utad.png" width="100" height="100">
+        <h1 class="p-4"> U-TAD Company Day</h1>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler offset-md-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse-m" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tus eventos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Explorar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Empresas apuntadas</a>
+            </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-between align-items-center p-3 my-5 border">
+        <!-- Video company day años anteriores -->
+        <div class="row">
+            <video id="video" width="600" height="400" controls>
+                <source id="svideo" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="../static/dia_lugar.png">
+    </div>
+
+    <!-- galería de imágenes-->
+    <div class="galeria_fotos my-5">
+        <!-- Carousel wrapper -->
+        <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+        <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button
+            type="button" data-mdb-target="#carouselBasicExample"
+            data-mdb-slide-to="1" aria-label="Slide 2"
+        ></button>
+        <button
+            type="button" data-mdb-target="#carouselBasicExample"
+            data-mdb-slide-to="2" aria-label="Slide 3"
+        ></button>
+        </div>
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <img src="../static/foto1.jpg" class="d-block w-100" alt="Fotos company day años anteriores"/>
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Company day</h5>
+            </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+            <img src="../static/foto2.jpg" class="d-block w-100" alt="Fotos company day" />
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Company Day</h5>
+            </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+            <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
+            class="d-block w-100"
+            alt="Cliff Above a Stormy Sea"
+            />
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+            </div>
+        </div>
+        </div>
+        <!-- Inner -->
+
+        <!-- Controls -->
+        <button
+        class="carousel-control-prev"
+        type="button"
+        data-mdb-target="#carouselBasicExample"
+        data-mdb-slide="prev"
+        >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+        class="carousel-control-next"
+        type="button"
+        data-mdb-target="#carouselBasicExample"
+        data-mdb-slide="next"
+        >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+        <!-- Carousel wrapper -->
+    </div>
+    <div>
+		<button type="button" class="btn btn-primary btn-md btn-block" onclick="location.href='formulario_empresas.html'">Inscripción Empresas</button>
+		<button type="button" class="btn btn-primary btn-md btn-block" onclick="location.href='https://www.jobteaser.com/es'">Inscripción Alumnos</button>
+	</div>
+</body>
+</html>

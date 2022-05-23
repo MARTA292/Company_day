@@ -1,0 +1,74 @@
+{% extends "inscripcion_empresas.html" %}
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <!--
+        <form action="/update/{{empresas.0}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" value="{{empresas.1}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="person" value="{{empresas.2}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="email" value="{{empresas.3}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" value="{{empresas.4}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="direccion" value="{{empresas.5}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="poblacion" value="{{empresas.6}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="provincia" value="{{empresas.7}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="codigo_postal" value="{{empresas.8}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="pais" value="{{empresas.9}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="url" value="{{empresas.10}}" class="form-control">
+          </div>
+        -->
+
+          <hr>
+
+          <p> <h4>Consiento el uso del nombre de la empresa y el logo para material promocional de este evento: </h4>
+          <label name="si">Si</label><input type="radio" value="si">
+          <label name="no">No</label><input type="radio" value="no">
+          </p>
+          <hr>
+
+          <p> <h4>La empresa actualmente está buscando gente:</h4>
+          <label name="si_buscagente">Si</label>
+          <input type="radio" value="si">
+          <label name="no_buscagente">No</label>
+          <input type="radio" value="no"><br>
+          </p>
+          <hr>
+
+          <p><h4> Seleccione las actividades en las que quiera participar: </h4><br>
+          <input type="checkbox" name="company_fair"> Company Fair<br>
+          <input type="checkbox" name="student_pitches"> Student Pitches<br>
+          <input type="checkbox" name="speed_meetings"> Speed Meeting<br>
+          <input type="checkbox" name="company_talks"> Comapy Talks<br>
+          </p>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

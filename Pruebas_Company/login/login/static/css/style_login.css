@@ -1,0 +1,19 @@
+header{
+    background: #EFEFEF;
+  }
+  
+header img{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.container img{
+    margin-right: auto;
+}
+
+form{
+    margin-right: 50%;
+    border: 2ex;
+    border-radius: 20%;
+    border-color: grey;
+}

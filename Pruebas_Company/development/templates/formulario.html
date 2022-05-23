@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+
+    <link rel="stylesheet" href="../static/css/style_form.css">
+    <link rel="stylesheet" href="../static/css/style_barraprogress.css">
+    <title>Formulario - Registro</title>
+</head>
+<body>
+    <header class="d-flex justify-content-around">
+        <img src="../static/img/logo-utad.png" class="d-lg-inline-flex" width="100" height="50">
+        <img src="../static/img/logo-company.png" class="d-lg-inline-flex" width="200" height="80">
+        <img src="../static/img/espanol.png" class="d-lg-inline-flex" width="50" height="50">
+    </header>
+    <br>
+    <!-- TITULO -->
+    <h3 class="text-center">Inscribe a tu empresa en el Company Day</h3>
+    <br>    
+    <div class="container justify-content-center" >
+        <!-- BARRA DE PROCESO -->
+        <!-- https://bbbootstrap.com/snippets/multi-step-form-wizard-animated-progressbar-53000683 -->
+        <!-- <img src="../static/img/proceso-inscripcion1.png" height="100"> -->
+
+       <!-- {% block barraprogreso %}
+        {% endblock %}   -->
+
+        <div class="container px-1 px-md-4 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <ul id="progressbar" class="text-center">
+                        <li class="active step0"></li>
+                        <li class=" step0"></li>
+                        <li class=" step0"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-between top">
+                <div class="row d-flex icon-content">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Registro de empresas</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> 
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Actividades del<br>Company Day</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> 
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Últimas cuestiones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="formulario">
+            <form target="_blank">
+                <label for="nombre_empresa">Nombre de la empresa </label>
+                <input type="text" class="form-control" name="nombre_empresa"><br>
+    
+                <label for="persona_contacto"> Nombre de la persona de contacto </label>
+                <input type="text" class="form-control" name="persona_contacto"><br>
+    
+                <label for="mail_contacto"> Email de contacto </label>
+                <input type="email" class="form-control" name="mail_contacto" >
+    
+                <label for="tlf_contacto"> Teléfono de contacto </label>
+                <input type="tel" class="form-control" name="tlf_contacto"><br>
+    
+                <label for="direccion_empresa"> Dirección de la empresa </label>
+                <input type="text" class="form-control"> <br>
+    
+                <label for="poblacion_empresa"> Población</label>
+                <input type="text" class="form-control">
+    
+                <label for="provincia_empresa">Provincia</label>
+                <input type="text" class="form-control">
+    
+                <label for="codigopostal_empresa"> Código Postal </label>
+                <input type="number" class="form-control">
+    
+                <label for="pais_empresa"> Pais </label>
+                <input type="text" class="form-control"> <br>
+    
+                <label for="url_empresa"> URL de la empresa </label>
+                <input type="url" class="form-control">
+    
+                <label for="logo_empresa">Logo de la empresa </label>  <!-- <input type="image" class="form-control"> -->
+                
+                <input type="submit" value="Enviar inscripción" name="submit" >
+            </form>
+        </div>
+    </div> 
+    
+</body>
+</html>
