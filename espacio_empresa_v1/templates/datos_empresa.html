@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../static/css/maquetacion.css">
+  <link rel="stylesheet" href="../static/css/espacio_empresa.css">
+  <link rel="stylesheet" href="../static/css/footer.css">  
+  <script src="../static/js/espacio_empresa.js"></script>
+
+
+  <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Datos Empresa</title>
+</head>
+
+<body>
+  <header class="d-flex justify-content-around">
+    <img src="../static/img/logo-utad.png" class="d-lg-inline-flex" width="100" height="50">
+    <img src="../static/img/logo-company.png" class="d-lg-inline-flex" width="200" height="80">
+    <img src="../static/img/espanol.png" class="d-lg-inline-flex" width="50" height="50">
+  </header>
+  <br>
+  <div class="contenedor">
+    <img class="img-fluid" src="https://picsum.photos/1500/600?random=1" />
+    <div class="centrado">
+      <h1>Bienvenido empresa {{nombre}}</h1>
+    </div>
+  </div>
+  <div class="container" id="botones">
+    <div class="row">
+      <div class="col-xs-3">
+        <!--<button id="inicio" type="button" class="btn btn-outline-primary">Actividades inscritas</button>-->
+        <button type="button" class="btn btn-primary" onclick="showActividades()">Actividades inscritas</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showFair()">Company Fair</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showPitches()">Student Pitches</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showMeetings()">Speed Meetings</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showTalks()">Company Talk</button>
+      </div>
+    </div>
+  </div>
+
+  <!--############################################# FORMULARIO DATOS EMPRESA #############################################-->
+    <div id="formulario" class="container center p-3 my-2 border rounded">
+        <h2>Datos registrados de la empresa</h2>
+        <br>
+        <form action="/module001Login/signup/" method="post" novalidate>
+            <input id="csrf_token" name="csrf_token" type="hidden" value="ImI3MTZhODM1NGFhY2ZiNGE0MGNlMzZkMTg4MWY2MTA5ZDhkODAzMGEi.YozemQ.KOe6HynH48ieOj1TIdGEw3xFizo">
+            <div id="datos_empresa">
+                <label for="name">Nombre de la empresa * </label>
+                <input id="name" name="name" required size="64" type="text" value="">
+                
+                <br>
+                <label for="email">Email * </label>
+                <input id="email" name="email" required type="text" value="">
+                
+                <br>
+                <label for="password">Password * </label>
+                <input id="password" name="password" required type="password" value="">
+                
+                <br>
+                <label for="persona_contacto">Persona de contacto</label>
+                <input id="persona_contacto" name="persona_contacto" required type="text" value="">
+                
+                <br>
+                <label for="phone">Telefono * </label>
+                <input id="phone" name="phone" required type="text" value="">
+                
+                <br>
+                <label for="direccionLinea1">Direccion 1 *</label>
+                <input id="direccionLinea1" name="direccionLinea1" required type="text" value="">
+                
+                <br>
+                <label for="direccionLinea2">Direccion 2</label>
+                <input id="direccionLinea2" name="direccionLinea2" type="text" value="">
+                
+                <br>
+                <label for="poblacion">Poblacion * </label>
+                <input id="poblacion" name="poblacion" required type="text" value="">
+                
+                <br>
+                <label for="provincia">Provincia * </label>
+                <input id="provincia" name="provincia" required type="text" value="">
+                
+                <br>
+                <label for="codigo_postal">Codigo Postal * </label>
+                <input id="codigo_postal" name="codigo_postal" required type="text" value="">
+                
+                <br>
+                <label for="pais">Pais * </label>
+                <input id="pais" name="pais" required type="text" value="">
+                
+                <br>
+                <label for="url">Url * </label>
+                <input id="url" name="url" required type="text" value="">
+                
+                <br>
+                <label for="recovery">Frase de recuperación</label>
+                <input id="recovery" name="recovery" required type="text" value="">
+                
+                <br>
+                <label for="cif">CIF de la empresa</label>
+                <input id="cif" name="cif" required type="text" value="">
+                
+            </div>
+
+            <br><br>
+
+            <div id="consentimiento">
+                <p> Consiento el uso del nombre de la empresa y el logo para material promocional de este evento: <br>
+                    <label for="si">Si</label><input type="radio" value="si">
+                    <label for="no">No</label><input type="radio" value="no">
+                    </p>
+                    <br>
+                    <p> La empresa actualmente está buscando gente:<br>
+                    <label for="si_buscagente">Si</label>
+                    <input type="radio" value="si">
+                    <label for="no_buscagente">No</label>
+                    <input type="radio" value="no"><br>
+                </p>
+            </div>
+
+            <br>
+            <button type="button" type="submit" class="btn btn-primary btn-lg btn-block my-6" onclick="edit()">Editar Campos Modificados</button>
+        <!--
+            <div id="botonEnviar">
+                <input id="submit" name="submit" type="submit" value="Registrar">
+            </div> -->
+        </form>
+    </div>
+<!--############################################# FIN FORMULARIO DATOS EMPRESA #############################################-->
+
+
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-2 my-3 pb-0">
+      <div class="row">
+        <!--Grid column-->
+        <section class="mb-8">
+          <p>
+            Calle Playa de Liencres, 2 bis. – Parque Europa Empresarial <br>
+            Edificio Madrid – 28290 Las Rozas, Madrid <br>
+            info@u-tad.com | (+34) 900 373 379 | L-V: 09:00 h. – 21:00 h.
+          </p>
+        </section>
+        <!-- Section: Text -->
+        <section class="mb-4" id="social_medias">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Text -->
+      </div>
+      
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://u-tad.com/">u-tad.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>

@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../static/css/maquetacion.css">
   <link rel="stylesheet" href="../static/css/espacio_empresa.css">
   <link rel="stylesheet" href="../static/css/footer.css">
+  <script src="../static/js/espacio_empresa.js"></script>
 
   <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Formulario - Registro</title>
+  <title>Espacio Empresa</title>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
     <div class="row">
       <div class="col-xs-3">
         <!--<button id="inicio" type="button" class="btn btn-outline-primary">Actividades inscritas</button>-->
-        <button type="button" class="btn btn-light" onclick="showActividades()">Actividades inscritas</button>
+        <button type="button" class="btn btn-primary" onclick="showActividades()">Actividades inscritas</button>
       </div>
       <div class="col-xs-3">
         <button type="button" class="btn btn-primary" onclick="showFair()">Company Fair</button>
@@ -48,7 +49,7 @@
         <button type="button" class="btn btn-primary" onclick="showMeetings()">Speed Meetings</button>
       </div>
       <div class="col-xs-3">
-        <button type="button" class="btn btn-primary" onclick="showTalks()">Company Talk</button>
+        <button type="button" class="btn btn-light" onclick="showTalks()">Company Talk</button>
       </div>
     </div>
   </div>
@@ -59,21 +60,27 @@
     <h2>Company Talks</h2>
     <br>
     <div class="container my-3 border rounded">
-      <div class="row">
-        <div class="col-md-6">
-          <section class="container p-5">
-            <h3>Company fair</h3>
-            <br>
-            <h4>Jueves 18 noviembre</h4>
-            <p>Se ha inscrito para el turno de {{turno}}</p>
-            <p>Se queda a comer {{comida}}</p>
-            <p>Intolerancias {{intolerancias}}</p>
-          </section>
-        </div>
-        <div class="col-md-6">
-          <img src="../static/img/company_fair_1.jpg" width="450" height="250" class="img-fluid my-5">
-        </div>
+      <div id="datos_talks" >
+        <p>Desea dar una charla: 
+          <input id="yes_fair" type="checkbox" name="yes" ckecked> Si
+          <input id="no_fair" type="checkbox" name="no"> No
+        </p>
+        <p>Introduzca el título de la charla: <br>
+        <input type="text" id="title_talk" name="title"></p> 
+        <p>Introduzca el nombre de la persona que dará la charla y puesto que ocupa <br>
+        <input type="text" id="person_talk" name="person"></p> 
+        
+        <p> Descripción breve de la temática de la charla <br>
+          <textarea id="descripcion" class="form-control" rows="3">Big Data y Ciberseguridad, una combinación explosiva</textarea>
+        </p>  
+        <p> Escriba los días y horas en las que pueda dar la charla <br>
+          <textarea id="horario_meeting" class="form-control" rows="3">Miércoles de 10 a 14 y 17 a 20 o jueves a las 12 ...</textarea>
+        </p>
+        
       </div>
+      <br><br>
+        <button type="button" class="btn btn-primary btn-lg btn-block my-6" onclick="edit()">Editar Campos Modificados</button>
+        <br>
     </div>
 
   </div>

@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../static/css/maquetacion.css">
   <link rel="stylesheet" href="../static/css/espacio_empresa.css">
   <link rel="stylesheet" href="../static/css/footer.css">
+  <script src="../static/js/espacio_empresa.js"></script>
 
   <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Formulario - Registro</title>
+  <title>Espacio Empresa</title>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
     <div class="row">
       <div class="col-xs-3">
         <!--<button id="inicio" type="button" class="btn btn-outline-primary">Actividades inscritas</button>-->
-        <button type="button" class="btn btn-light" onclick="showActividades()">Actividades inscritas</button>
+        <button type="button" class="btn btn-primary" onclick="showActividades()">Actividades inscritas</button>
       </div>
       <div class="col-xs-3">
         <button type="button" class="btn btn-primary" onclick="showFair()">Company Fair</button>
@@ -45,7 +46,7 @@
         <button type="button" class="btn btn-primary" onclick="showPitches()">Student Pitches</button>
       </div>
       <div class="col-xs-3">
-        <button type="button" class="btn btn-primary" onclick="showMeetings()">Speed Meetings</button>
+        <button type="button" class="btn btn-light" onclick="showMeetings()">Speed Meetings</button>
       </div>
       <div class="col-xs-3">
         <button type="button" class="btn btn-primary" onclick="showTalks()">Company Talk</button>
@@ -59,21 +60,32 @@
     <h2>Speed Meeting</h2>
     <br>
     <div class="container my-3 border rounded">
-      <div class="row">
-        <div class="col-md-6">
-          <section class="container p-5">
-            <h3>Company fair</h3>
-            <br>
-            <h4>Jueves 18 noviembre</h4>
-            <p>Se ha inscrito para el turno de {{turno}}</p>
-            <p>Se queda a comer {{comida}}</p>
-            <p>Intolerancias {{intolerancias}}</p>
-          </section>
-        </div>
-        <div class="col-md-6">
-          <img src="../static/img/company_fair_1.jpg" width="450" height="250" class="img-fluid my-5">
-        </div>
+      <div id="datos_meeting">
+        <p>Participa en el Speed Meeting: 
+          <input id="yes_meeting" type="checkbox" name="yes" ckecked> Si
+          <input id="no_meeting" type="checkbox" name="no"> No
+      </p>
+        <p> Seleccione si quiere hacer las entrevistas presencial u online: (* elegir una) <br>
+            <input id="meeting_presencial" type="checkbox" name="presencial"> Presencial
+            <input id="meeting_online" type="checkbox" name="online"> Online
+        </p>
+        <p> Seleccione los días que quiera hacer entrevistas con los alumnos: (Escribir los días y las franjas horarias posibles) <br>
+          <textarea id="horario_meeting" class="form-control" rows="3">Lunes de 15 a 19, martes de 10 a 14 y 17 a 20...</textarea>
+        </p>
+        <p> Introduzca el link en donde hacer la entrevista en caso de hacerla online <br>
+            <input type="text" name="link_meeting"></p>
+        
+        <p>Introduzca el tiempo que quiera que duren las entrevistas: </p>
+        <select class="form-control" id="time_pitches" name="time">
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+      </select>
       </div>
+      <br><br>
+        <button type="button" class="btn btn-primary btn-lg btn-block my-6" onclick="edit()">Editar Campos Modificados</button>
+        <br>
     </div>
 
   </div>

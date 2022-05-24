@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../static/css/maquetacion.css">
   <link rel="stylesheet" href="../static/css/espacio_empresa.css">
   <link rel="stylesheet" href="../static/css/footer.css">
+  <script src="../static/js/espacio_empresa.js"></script>
 
   <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Formulario - Registro</title>
+  <title>Espacio Empresa</title>
 </head>
 
 <body>
@@ -36,13 +37,13 @@
     <div class="row">
       <div class="col-xs-3">
         <!--<button id="inicio" type="button" class="btn btn-outline-primary">Actividades inscritas</button>-->
-        <button type="button" class="btn btn-light" onclick="showActividades()">Actividades inscritas</button>
+        <button type="button" class="btn btn-primary" onclick="showActividades()">Actividades inscritas</button>
       </div>
       <div class="col-xs-3">
         <button type="button" class="btn btn-primary" onclick="showFair()">Company Fair</button>
       </div>
       <div class="col-xs-3">
-        <button type="button" class="btn btn-primary" onclick="showPitches()">Student Pitches</button>
+        <button type="button" class="btn btn-light" onclick="showPitches()">Student Pitches</button>
       </div>
       <div class="col-xs-3">
         <button type="button" class="btn btn-primary" onclick="showMeetings()">Speed Meetings</button>
@@ -59,23 +60,30 @@
     <h2>Student Pitches</h2>
     <br>
     <div class="container my-3 border rounded">
-      <div class="row">
-        <div class="col-md-6">
-          <section class="container p-5">
-            <h3>Company fair</h3>
-            <br>
-            <h4>Jueves 18 noviembre</h4>
-            <p>Se ha inscrito para el turno de {{turno}}</p>
-            <p>Se queda a comer {{comida}}</p>
-            <p>Intolerancias {{intolerancias}}</p>
-          </section>
-        </div>
-        <div class="col-md-6">
-          <img src="../static/img/company_fair_1.jpg" width="450" height="250" class="img-fluid my-5">
-        </div>
+      <div id="datos_pitches">
+        <p>Participa en el Student Pitches: 
+            <input id="yes_pitches" type="checkbox" name="yes" ckecked> Si
+            <input id="no_pitches" type="checkbox" name="no"> No
+        </p>
+        <p> Seleccione si quiere ver los proyectos presencial u online: (* elegir una) <br>
+            <input id="proyectos_presencial" type="checkbox" name="presencial"> Presencial
+            <input id="proyectos_online" type="checkbox" name="online"> Online
+        </p>
+        <p> Seleccione las carreras de las que quiera ver proyectos de los alumnos: (* al menos elegir una) <br>
+            <input id="DIDI" type="checkbox" > Diseño Digital
+            <input id="ANIM" type="checkbox" > Animación
+            <input id="INSO" type="checkbox"> Ingeniería de Software
+            <input id="MAIS" type="checkbox"> Ingeniería de Software y Matemáticas
+            <input id="V" type="checkbox"> Viernes
+        </p>
+        <label for="fname">Introduzca el tiempo que quiera que duren los student pitches: </label><br>
+        <input type="text" id="time_pitches" name="time"><br>            
       </div>
+      <br><br>
+      <button type="button" class="btn btn-primary btn-lg btn-block my-6" onclick="edit()">Editar Campos Modificados</button>
+      <br>
     </div>
-
+    
   </div>
 
 

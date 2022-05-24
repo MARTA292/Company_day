@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="../static/css/maquetacion.css">
   <link rel="stylesheet" href="../static/css/espacio_empresa.css">
   <link rel="stylesheet" href="../static/css/footer.css">
+  <script src="../static/js/espacio_empresa.js"></script>
 
   <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Formulario - Registro</title>
+  <title>Espacio Empresa</title>
 </head>
 
 <body>
@@ -60,6 +61,9 @@
     <br>
     <div class="container my-3 border rounded">
         <div id="datos_fair" style="display:block">
+            <p>Participa en el Company Fair:  </p>
+            <input id="yes_fair" type="checkbox" name="yes" ckecked> Si
+            <input id="no_fair" type="checkbox" name="no"> No
             <p> Seleccione el turno para asistir a la feria el jueves de forma presencial: (* al menos elegir una) <br>
                 <input id="morning" type="checkbox" name="morning"> Turno de mañana (9:00-14:30)
                 <input id="afternoon" type="checkbox" name="afternoon"> Turno de tarde (15:00-20:00)<br>
@@ -79,7 +83,9 @@
             <textarea id="comida" class="form-control" rows="3">Ninguna</textarea>
             
         </div>
-        <button type="button" class="btn btn-primary" onclick="edit()">Editar Campos Modificados</button>
+        <br><br>
+        <button type="button" class="btn btn-primary btn-lg btn-block my-6" onclick="edit()">Editar Campos Modificados</button>
+        <br>
     </div>
 
   </div>
@@ -120,7 +126,6 @@
       © 2020 Copyright:
       <a class="text-white" href="https://u-tad.com/">u-tad.com</a>
     </div>
-    <!-- Copyright -->
   </footer>
 </body>
 

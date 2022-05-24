@@ -18,3 +18,7 @@ function showTalks(){
     console.log("talks");
     window.location.href = "talks.html"; 
 }
+
+function editPerfil(){
+    window.location.href = "datos_empresa.html";
+}
