@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../static/css/maquetacion.css">
+  <link rel="stylesheet" href="../static/css/espacio_empresa.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+
+  <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Formulario - Registro</title>
+</head>
+
+<body>
+  <header class="d-flex justify-content-around">
+    <img src="../static/img/logo-utad.png" class="d-lg-inline-flex" width="100" height="50">
+    <img src="../static/img/logo-company.png" class="d-lg-inline-flex" width="200" height="80">
+    <img src="../static/img/espanol.png" class="d-lg-inline-flex" width="50" height="50">
+  </header>
+  <br>
+  <div class="contenedor">
+    <img class="img-fluid" src="https://picsum.photos/1500/600?random=1" />
+    <div class="centrado">
+      <h1>Bienvenido empresa {{nombre}}</h1>
+    </div>
+  </div>
+  <div class="container" id="botones">
+    <div class="row">
+      <div class="col-xs-3">
+        <!--<button id="inicio" type="button" class="btn btn-outline-primary">Actividades inscritas</button>-->
+        <button type="button" class="btn btn-light" onclick="showActividades()">Actividades inscritas</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showFair()">Company Fair</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showPitches()">Student Pitches</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showMeetings()">Speed Meetings</button>
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="btn btn-primary" onclick="showTalks()">Company Talk</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container center" id="actividades_incritas">
+    <br>
+    <h2>Company Talks</h2>
+    <br>
+    <div class="container my-3 border rounded">
+      <div class="row">
+        <div class="col-md-6">
+          <section class="container p-5">
+            <h3>Company fair</h3>
+            <br>
+            <h4>Jueves 18 noviembre</h4>
+            <p>Se ha inscrito para el turno de {{turno}}</p>
+            <p>Se queda a comer {{comida}}</p>
+            <p>Intolerancias {{intolerancias}}</p>
+          </section>
+        </div>
+        <div class="col-md-6">
+          <img src="../static/img/company_fair_1.jpg" width="450" height="250" class="img-fluid my-5">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-2 my-3 pb-0">
+      <div class="row">
+        <!--Grid column-->
+        <section class="mb-8">
+          <p>
+            Calle Playa de Liencres, 2 bis. – Parque Europa Empresarial <br>
+            Edificio Madrid – 28290 Las Rozas, Madrid <br>
+            info@u-tad.com | (+34) 900 373 379 | L-V: 09:00 h. – 21:00 h.
+          </p>
+        </section>
+        <!-- Section: Text -->
+        <section class="mb-4" id="social_medias">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Text -->
+      </div>
+      
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://u-tad.com/">u-tad.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>

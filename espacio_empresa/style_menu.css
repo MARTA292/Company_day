@@ -1,0 +1,63 @@
+.page-header .admin-menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 35px;
+  }
+   
+  .page-header .admin-menu li:last-child {
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+   
+  .page-header .admin-menu li > * {
+    width: 100%;
+    padding: 12px 15px;
+  }
+   
+  .page-header .admin-menu .menu-heading h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    margin-top: 12px;
+    color: var(--page-header-headingColor);
+  }
+   
+  .page-header .admin-menu a,
+  .page-header .admin-menu button {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  /*/////////////ESTILO PARA ABRIR Y CERRAR MANU DESPLEGABLE////////////////*/
+  /*CUSTOM VARIABLES HERE*/
+ 
+@media screen and (min-width: 768px) {
+    .collapsed .page-header {
+      width: 40px;
+    }
+   
+    .collapsed .page-header .admin-menu li > * {
+      padding: 10px;
+    }
+   
+    .collapsed .page-header .logo,
+    .collapsed .page-header .admin-menu span,
+    .collapsed .page-header .admin-menu .menu-heading {
+      display: none;
+    }
+   
+    .collapsed .page-header .admin-menu svg {
+      margin-right: 0;
+    }
+   
+    .collapsed .page-header .collapse-btn svg {
+      transform: rotate(180deg);
+    }
+   
+    .collapsed .page-content {
+      left: 40px;
+      width: calc(100% - 40px);
+    }
+  }

@@ -1,0 +1,24 @@
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.centrado{
+    background-color: rgba(186, 186, 186, 0.442);
+    border-radius: 10px;
+    /*backdrop-filter: blur(2px);
+    backdrop-filter: opacity(20%);*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#botones{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#botones button{
+    margin-right: 5%;
+}
