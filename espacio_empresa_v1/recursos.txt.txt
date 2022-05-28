@@ -8,6 +8,7 @@ https://mdbootstrap.com/docs/standard/navigation/footer/
 
 HTML Fondos y bordes
 https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders
+https://unsplash.com/es/s/fotos/oficina?orientation=landscape
 
 Maquetación con Bootstrap
 Contenedores: https://fgarciajulia.github.io/mi_primera_pagina/acerca-bootstrap.html
